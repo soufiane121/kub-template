@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: stephengrider/client # dockerhub image for microservice
+    - image: soufi121/client # dockerhub image for microservice. 
       context: client # name of the folder
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - src: 'src/**/*.js' #will look at react and update pods anythime we made changes inside this folder, if change happed oustide this folder scaffold will rebuild the image
             dest: .
-    - image: stephengrider/comments
+    - image: soufi121/comments
       context: comments
       docker:
         dockerfile: Dockerfile
@@ -24,7 +24,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: stephengrider/event-bus
+    - image: soufi121/event-bus
       context: event-bus
       docker:
         dockerfile: Dockerfile
@@ -32,7 +32,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: stephengrider/moderation
+    - image: soufi121/moderation
       context: moderation
       docker:
         dockerfile: Dockerfile
@@ -40,7 +40,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: stephengrider/posts
+    - image: soufi121/posts
       context: posts
       docker:
         dockerfile: Dockerfile
@@ -48,7 +48,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: stephengrider/query
+    - image: soufi121/query
       context: query
       docker:
         dockerfile: Dockerfile
