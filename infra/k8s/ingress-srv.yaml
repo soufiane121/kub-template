@@ -19,7 +19,7 @@ spec:
             backend:
               serviceName: query-srv  # name of service or that pod (container) we want to connect to
               servicePort: 4002
-          - path: /posts/?(.*)/comments
+          - path: /posts/?(.*)/comments ## useing regex to tell path anything after/posts with match regex with /comments
             backend:
               serviceName: comments-srv
               servicePort: 4001
