@@ -1,5 +1,5 @@
 apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
+kind: Ingress # have to install ingress-nginx
 metadata:
   name: ingress-srv # name of this pod
   annotations:
@@ -14,11 +14,11 @@ spec:
           - path: /posts/create
             backend:
               serviceName: posts-clusterip-srv # name of service or that pod (container) we want to connect to run kubectl get services
-              servicePort: 4000
+              servicePort: 4000 
           - path: /posts
             backend:
               serviceName: query-srv  # name of service or that pod (container) we want to connect to
-              servicePort: 4002
+              servicePort: 4002 
           - path: /posts/?(.*)/comments ## useing regex to tell path anything after/posts with match regex with /comments
             backend:
               serviceName: comments-srv
