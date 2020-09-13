@@ -6,7 +6,7 @@ deploy:
       - ./infra/k8s/* # where kubernetes files are located 
 build:
   local:
-    push: false
+    push: false # dont push to docker hub
   artifacts:
     - image: soufi121/client # dockerhub image for microservice. 
       context: client # name of the folder
@@ -40,7 +40,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: soufi121/posts
+    - image: soufi121/post-image
       context: posts
       docker:
         dockerfile: Dockerfile

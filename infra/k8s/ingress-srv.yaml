@@ -8,6 +8,7 @@ metadata:
 spec:
   rules:
     - host: posts.com # you can chnage it base on what you made it before
+    # the paths for Specific paths but event bus use service name with port
       http:
         paths:
           - path: /posts/create
@@ -27,3 +28,4 @@ spec:
             backend:
               serviceName: client-srv
               servicePort: 3000
+
